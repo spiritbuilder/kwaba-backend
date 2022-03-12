@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1/auth", userController);
 
 app.use("/api/v1/borrowings", auth, borrowingController);
-app.use("*", (req, res) => {
+app.get("*", (req, res) => {
   res.redirect("/");
 });
 
