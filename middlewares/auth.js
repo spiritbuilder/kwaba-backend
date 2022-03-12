@@ -26,4 +26,3 @@ async function verify(req, res, next) {
 }
 
 module.exports = verify;
-//DB_URL=mongodb+srv://spiritbuilder:Ayokunnu.4@cluster0.dm9nf.mongodb.net/kwaba?retryWrites=true&w=majority
