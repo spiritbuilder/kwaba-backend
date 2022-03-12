@@ -41,9 +41,9 @@ router.post("/signup", async (req, res) => {
     .catch((e) => {
       console.log(JSON.stringify(e));
       if (e.code === 11000) {
-        res.status(400).json({ message: "email has already been used" });
+       return res.status(400).json({ message: "email has already been used" });
       }
-      res.status(500).json({ message: "server error" });
+     return res.status(500).json({ message: "server error" });
     });
 });
 

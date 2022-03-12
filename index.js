@@ -5,10 +5,10 @@ let DB = require("./db/db.js");
 let userController = require("./controllers/user");
 let auth = require("./middlewares/auth");
 let borrowingController = require("./controllers/borrowing");
-
-DB._connect();
 dotenv.config();
-let port = 4000 || process.env.PORT;
+DB._connect();
+
+let port = process.env.PORT || 4000;
 
 let app = express();
 
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/v1/auth", userController);
 
-app.use("/api/v1/borrowings",auth,  borrowingController);
+app.use("/api/v1/borrowings", auth, borrowingController);
 app.use("*", (req, res) => {
   res.redirect("/");
 });
